@@ -1,0 +1,61 @@
+<h2>Variables</h2>
+<div class="step-text">
+<p>You can use a programming language like Python to do calculations or work with <a class="theory-lookup" href="/learn/step/5885" rel="noopener noreferrer nofollow" target="_blank" title="A constant in Python is a string that contains a certain type of character, such as punctuation marks, digits, or uppercase English alphabet. | The `string` module in Python provides these string constants, which only use ASCII characters.">constant</a> values like <a class="theory-lookup" href="/learn/step/6842" rel="noopener noreferrer nofollow" target="_blank" title="In Python, a string is a sequence of characters, enclosed in either single or double quotes. | It is a common and useful data type, often used to represent textual information. Strings can be multi-line, created using triple quotes on each side of the string literal. The Python standard library has a module called `string` that offers additional tools to work with strings. Docstrings are a common use of strings in Python, used to document classes, modules, or functions.">strings</a>. Is this enough for you, though? When writing real programs, you usually need to <strong><a class="theory-lookup" href="/learn/step/11338" rel="noopener noreferrer nofollow" target="_blank" title="In Python, storing value refers to the process of assigning a value to a variable, which reserves a location in memory to hold that value. | When a value is stored, it can be retrieved later in the program by referencing the variable name. The variable name serves as a reference to the memory location where the value is stored. It's important to note that multiple variables can refer to the same memory location, allowing for the creation of aliases. Additionally, variables can be reassigned new values at any point during the execution of the program.">store values</a></strong> or evaluation results in computer <a class="theory-lookup" href="/learn/step/30244" rel="noopener noreferrer nofollow" target="_blank" title="In Python, memory refers to the space allocated for storing data and objects used by a program. | Python has automatic memory management systems, such as reference counting and generational garbage collection, which handle memory cleanup without requiring manual intervention from the developer. This means that developers don't need to explicitly deallocate memory when writing code, as Python takes care of it automatically. However, once a program finishes executing, the memory allocated to Python objects, including dictionaries, is released and no longer accessible.">memory</a>.</p>
+<h5 id="what-is-a-variable">What is a variable?</h5>
+<p>A <strong>variable</strong> is a named place where you can store a value to access it later. Imagine a box where you keep something. That's a variable.</p>
+<p>For example, you calculate a result and would like to reuse this result elsewhere. In this case, you can use such a box to save time.</p>
+<p>In general, it's a good practice to give a variable a name that describes its content.</p>
+<h5 id="defining-a-variable-and-assigning-values">Defining a variable and assigning values</h5>
+<p>You can keep almost anything in variables by assigning a value to a named variable with an equal sign. By <a href="https://www.python.org/dev/peps/pep-0008/#whitespace-in-expressions-and-statements" rel="noopener noreferrer nofollow" target="_blank">PEP 8</a>, one space before and after the assignment sign is considered good practice.</p>
+<pre><code class="language-python">day_of_week = "Monday"</code></pre>
+<p>Now you have a string value <code class="language-python">"Monday"</code> stored in computer memory. You can retrieve the value by calling the <a class="theory-lookup" href="/learn/step/5885" rel="noopener noreferrer nofollow" target="_blank" title="A variable name in Python is a unique identifier given to a variable, which is used to distinguish it from other variables. | It is crucial to choose a descriptive and meaningful name for a variable to make the code more readable and understandable. Python has certain naming conventions and rules for variable names, such as being case-sensitive, starting with a letter or underscore, and not using keywords. Following these conventions ensures that the code is consistent and easy to follow, reducing the chances of errors and bugs.">variable name</a>.</p>
+<pre><code class="language-python">print(day_of_week)  # Monday</code></pre>
+<p><code class="language-python">day_of_week</code> stores a value of the <code class="language-python">str</code> type.</p>
+<pre><code class="language-python">print(type(day_of_week))  # </code></pre>
+<p>You can always assign a new value to a defined variable.</p>
+<pre><code class="language-python">day_of_week = "Tuesday"</code></pre>
+<p>Now, you will retrieve another value:</p>
+<pre><code class="language-python">print(day_of_week)  # Tuesday</code></pre>
+<p>It is possible to assign the value of one variable to another variable:</p>
+<pre><code class="language-python">a = 10
+b = a  # b is 10</code></pre>
+<p>If you haven't defined a variable within the <a class="theory-lookup" href="/learn/step/6322" rel="noopener noreferrer nofollow" target="_blank" title="Scope in Python refers to the visibility or accessibility of a variable within the code. | When a variable is defined, it can be either global or local. A global variable is defined at the top level of the module and can be accessed from any code block in the program, making it useful for sharing state information or configuration between different functions. Local variables, on the other hand, are only visible within the nearest scope and cannot be accessed from the outside.">scope</a> of your code, you'll see an error when you try to use it:</p>
+<pre><code class="language-python">print(month_name)  # NameError: name 'month_name' is not defined</code></pre>
+<p>Python allows you to <a class="theory-lookup" href="/learn/step/37669" rel="noopener noreferrer nofollow" target="_blank" title="In Python, 'assign' refers to the process of giving a value to a variable. | This is a fundamental concept in programming, as variables allow you to store and manipulate data. In Python, you can assign values to variables using the equals sign (=). For example:
+
+```
+x = 5
+```
+
+In this case, the value 5 is assigned to the variable x. Python creates a new object, places the value 5 inside the object, and then creates a reference from the variable name x to the object.">assign</a> values of <a class="theory-lookup" href="/learn/step/5852" rel="noopener noreferrer nofollow" target="_blank" title="In Python, the concept of 'different type' refers to the distinction between various data types that objects can have, such as integers, strings, and lists. | This is defined by the class keyword in Python, which indicates the data type of a passed value. For example, a function can be defined with a specific data type for its argument, like 'def greet(name: str)'. The type of an object can be determined using the 'type()' function.">different types</a> to the same variable. Let's assign the string name of a month to a variable and print its type.</p>
+<pre><code class="language-python">month = "December"
+print(type(month))  # </code></pre>
+<p>Now, let's assign the number of this month to the variable and print its type again.</p>
+<pre><code class="language-python">month = 12
+print(type(month))  # </code></pre>
+<p>This assignment works because Python is a language with <strong><a class="theory-lookup" href="/learn/step/6224" rel="noopener noreferrer nofollow" target="_blank" title="Dynamic typing in Python refers to the concept that only runtime objects (values) have a type, but not the variables that store them. | This means that the type of a variable can change throughout the execution of a program. For instance, you can store an integer in a variable, and then later store a string in the same variable. This is different from statically typed languages, where the type of a variable is determined at compile-time and cannot be changed throughout the execution of the program.">dynamic typing</a>.</strong></p>
+<p></p><div class="alert alert-primary">
+<p>Please, do not overuse dynamic typing! If your code is long, you might forget that you changed the type of a variable. This is a common reason for errors!</p>
+<p></p></div>
+<h5 id="naming-rules">Naming rules</h5>
+<p>As mentioned above, each variable has a name that distinguishes it from other variables. There are some rules for naming variables that you should follow:</p>
+<ul>
+<li>
+<p>Names are case-sensitive (<code class="language-python">month</code> is not the same as <code class="language-python">Month</code>).</p>
+</li>
+<li>
+<p>A name begins with a letter or an underscore, followed by letters, digits or underscores (e.g., <code class="language-python">user_name</code>, <code class="language-python">score1</code>, <code class="language-python">_count</code>).</p>
+</li>
+<li>
+<p>A name cannot start with a digit (for example, <code class="language-python">2q</code> is invalid).</p>
+</li>
+<li>
+<p>A name must not be a <a href="https://github.com/python/cpython/blob/f45ef5edabb1cc0748f3326e7114b8aaa0424392/Lib/keyword.py#L18" rel="noopener noreferrer nofollow" target="_blank"></a><a class="theory-lookup" href="/learn/step/10372" rel="noopener noreferrer nofollow" target="_blank" title="In Python, a keyword is a reserved word that has a specific meaning and purpose in the language. | It is used to define the syntax and structure of the code, and they cannot be used as variable or function names. Keywords are case sensitive and are highlighted in the code editor. Some common keywords in Python are 'if', 'else', 'while', 'for', 'def', 'return', 'global', 'lambda', 'not', 'or', 'and', 'is', 'in', 'True', 'False', and 'None'.">keyword</a>.</p>
+</li>
+</ul>
+<p></p><div class="alert alert-warning">
+<p>Do not break these rules; otherwise, your program will not work.</p>
+<p></p></div>
+<h5 id="conclusion">Conclusion</h5>
+<p>In this topic, we've learned what variables are in Python. We also saw how to <a class="theory-lookup" href="/learn/step/5900" rel="noopener noreferrer nofollow" target="_blank" title="In Python, define refers to the act of creating a new variable, function, class, or module. | This is done by assigning a value to a variable, creating a function with the def keyword, creating a class with the class keyword, or importing a module with the import keyword. Defining an entity in Python allows you to give it a name and specify its behavior, which can then be used and reused throughout your code.">define</a> them, assign values to them, and what their naming rules are. Hopefully, this new knowledge will serve you on your way to learning Python! </p>
+</div>

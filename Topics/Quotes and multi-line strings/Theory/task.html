@@ -1,0 +1,44 @@
+<h2>Quotes and multi-line strings</h2>
+<div class="step-text">
+<p>You are already familiar with strings, which are extremely common and useful in programming. Let's take a look at some features of Python strings related to quotes and multi-line strings.</p>
+<h5 id="quotes" style="text-align: center;">Quotes</h5>
+<p>As you know, a <a class="theory-lookup" href="/learn/step/15332" rel="noopener noreferrer nofollow" target="_blank" title="A string literal in Python is a sequence of characters surrounded by either single or double quotes. | These quotes define the beginning and end of the string. Python interprets the characters within the quotes as a single entity, allowing for the manipulation and analysis of text data. String literals can contain various characters, including spaces, numbers, and special symbols. Additionally, string literals can be defined over multiple lines using triple quotes on each side, which is useful for incorporating large blocks of text or multi-line messages.">string literal</a> is surrounded by a pair of <strong>single</strong> or <strong><a class="theory-lookup" href="/learn/step/7130" rel="noopener noreferrer nofollow" target="_blank" title="In Python, a double quote is used to denote a string literal, which is a sequence of characters. | It is one of the two types of quotes that can be used to create strings, the other being single quotes. Double quotes are often used when the string itself contains a single quote, to avoid the need for escaping. However, the choice between single and double quotes is largely a matter of personal preference and convention, as both are functionally equivalent in Python.">double quotes</a></strong>. There is basically no difference between the two, but there are some common conventions concerning their use:</p>
+<ul>
+<li>Use double quotes if your string contains single quotes, for example, <code class="language-python">"You're doing great!"</code>.</li>
+<li>Use single quotes if your string contains double quotes, for example, <code class="language-python">'Have you read "Hamlet"?'</code>.</li>
+<li>Do not mix two styles in one literal! For example, something like <code class="language-python">"string!'</code> is not correct.</li>
+<li>Most importantly, be<strong> </strong>consistent in your use!</li>
+</ul>
+<p>There is a way to include any quotes in your string, regardless of the style of the outer quotes, and that is to use the <strong><a class="theory-lookup" href="/learn/step/7130" rel="noopener noreferrer nofollow" target="_blank" title="In Python, the backslash symbol (\\) is used to escape characters within a string. | This means that if you want to include a special character, such as a quotation mark or a newline, in a string without having it interpreted as the start or end of the string, you can use a backslash before it. This is known as escaping. The backslash tells Python that the character that follows it is part of the string, rather than an escape sequence. It's best practice to avoid backslashes inside strings, even though they work.">backslash symbol</a> </strong>(<code class="language-python">\</code>) before the quotes inside of the string. The backslash will basically tell Python that the quote symbol that follows it is a part of the string rather than its <a class="theory-lookup" href="/learn/step/6842" rel="noopener noreferrer nofollow" target="_blank" title="In Python, 'end' is a parameter that can be passed to the print function to specify what character should be printed at the end of the output. | By default, the print function adds a newline character ('\n') at the end of the output, but you can change it to any other character or string by using the 'end' parameter. For example, you can use 'end =  ' to print all the output on the same line.">end</a> or beginning. It is called <strong><a class="theory-lookup" href="/learn/step/7130" rel="noopener noreferrer nofollow" target="_blank" title="Escaping in Python refers to the practice of using a backslash () before a special character within a string, to indicate that the special character should be treated as a literal character rather than having its usual special meaning. | This is useful when you want to include special characters like quotes, backslashes, or newline characters within a string without causing syntax errors or unexpected behavior. By escaping these characters, you ensure that they are interpreted as part of the string's content, rather than as part of the string's syntax.">escaping</a></strong>, and you'll learn about it in detail in the next topics. </p>
+<p>In the examples below, both ways of writing strings are correct and will produce the same result:</p>
+<pre><code class="language-python"># example 1
+print("You're doing great!")
+print('You\'re doing great!')
+# example 2
+print("Have you read \"Hamlet\"?")
+print('Have you read "Hamlet"?')
+</code></pre>
+<p>However, it's considered best practice to avoid backslashes inside the strings – even though it works. You'll learn more about the style conventions in following topics.</p>
+<h5 id="multiline-strings" style="text-align: center;">Multiline strings</h5>
+<p>Strings can represent a long text, a single <a class="theory-lookup" href="/learn/step/10035" rel="noopener noreferrer nofollow" target="_blank" title="In Python, a character is a single Unicode character, which can be represented using the `str` data type. | This data type has a twofold nature, representing human-readable strings in a form that is suitable for computer processing.">character</a>, or even no characters, like in the case of an empty string. One thing has so far been true about all of them: all our strings were single line, no matter how long they were. However, you can also write <strong>multi-line</strong> strings in Python! To do that, you need to use <strong>triple quotes</strong> on each side of the string literal. Again, the choice of single or double quotes is up to you as both work fine in Python.</p>
+<p>Multi-line string in double quotes:</p>
+<pre><code class="language-python">print("""This
+is
+a
+multi-line
+string""")</code></pre>
+<p>Multi-line string in single quotes:</p>
+<pre><code class="language-python">print('''This
+is
+a
+multi-line
+string''')</code></pre>
+<p>Both examples print the same result:</p>
+<pre><code class="language-no-highlight">This
+is
+a
+multi-line
+string</code></pre>
+<h5 id="summary">Summary</h5>
+<p>In this topic, we've covered some basic information about using quotes in strings and saw how to write multi-line strings. This is by far not all you can do with strings in Python: there is a lot more to learn and, very importantly, to practice!</p>
+</div>

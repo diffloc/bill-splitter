@@ -1,0 +1,66 @@
+<h2>Dictionary methods</h2>
+<div class="step-text">
+<p>You already know how to create a dictionary and access its items. In this topic, you are going to learn about other features of dictionaries.</p>
+<h5 id="alternative-dictionary-creation" style="text-align: center;">Alternative dictionary creation</h5>
+<p>You know that there are two ways to create a dictionary. Using <em>curly braces </em>with a comma-separated list of <code class="language-python">key: value</code> pairs or the <code class="language-python">dict</code> constructor. We will learn about the <code class="language-python">fromkeys</code> method that creates a new dictionary with specified keys and values. This is the syntax for this method:</p>
+<pre><code class="language-python">dict.fromkeys(keys, value)</code></pre>
+<p>The <code class="language-python">keys</code> parameter is a sequence of elements that will become the keys of a new dictionary. The <code class="language-python">value</code> parameter is optional and defaults to <code class="language-python">None</code>, but the user can specify a value for all keys in the dictionary. Look at the example below:</p>
+<pre><code class="language-python">planets = {'Venus', 'Earth', 'Jupiter'}  
+  
+# initializing by default with None 
+planets_dict = dict.fromkeys(planets)
+print(planets_dict)  # {'Jupiter': None, 'Venus': None, 'Earth': None}
+
+# initializing with a value
+value = 'planet'
+planets_dict = dict.fromkeys(planets, value)
+print(planets_dict)  # {'Earth': 'planet', 'Venus': 'planet', 'Jupiter': 'planet'}
+
+# changing the value of 'Jupiter'
+planets_dict['Jupiter'] = "giant " + planets_dict['Jupiter']
+print(planets_dict)
+ # {'Earth': 'planet', 'Venus': 'planet', 'Jupiter': 'giant planet'}</code></pre>
+<p>The word was added successfully! But now we want to create a dictionary that would store the names of the satellites for those planets. Some planets have several satellites, and some do not have them at all, so it is more convenient to use a list as a value.</p>
+<pre><code class="language-python"># some satellites of the Solar System
+satellites = ['Moon', 'Io', 'Europa']
+
+# initializing with an empty list
+planets_dict = dict.fromkeys(planets, [])
+print(planets_dict)  # {'Jupiter': [], 'Venus': [], 'Earth': []}
+</code></pre>
+<p>Let's add the items from the <code class="language-python">satellites</code> list to the corresponding planets. Look, this is what happened to our dictionary:</p>
+<pre><code class="language-python">planets_dict['Earth'].append(satellites[0])
+planets_dict['Jupiter'].append(satellites[1])
+planets_dict['Jupiter'].append(satellites[2])
+print(planets_dict)  
+# {'Jupiter': ['Moon', 'Io', 'Europa'], 'Venus': ['Moon', 'Io', 'Europa'], 'Earth': ['Moon', 'Io', 'Europa']}</code></pre>
+<p>We see that all the elements of the <code class="language-python">satellites</code> list have been assigned to all planets in our dictionary. This happened because the <code class="language-python">fromkeys</code> method assigns the same object to all keys. While referring to different keys of the <code class="language-python">planets_dict</code> dictionary, we are still referring to the same list. The difference from the previous example is that if we use mutable objects (a list, a dictionary) as values,  all changes will also apply to our dictionary. The solution is to use the dictionary comprehension:</p>
+<pre><code class="language-python">planets_dict = {key: [] for key in planets}</code></pre>
+<p>More details on this operation will be provided in another topic on dictionary operations.</p>
+<h5 id="adding-items" style="text-align: center;"> Adding items</h5>
+<p>Suppose we want to add items to an existing dictionary. You know one way to do it — define a new key and a new value: <code class="language-python">existing_dict['new key'] = 'new value'</code>. But there is another way — use the <code class="language-python">update</code> method. The method updates the dictionary with new elements from another dictionary or an iterable of key-value pairs.</p>
+<p>Let's create a dictionary and define months as keys, and the average temperature for this month as values. So we have the following <code class="language-python">testable</code> dictionary:</p>
+<pre><code class="language-python">testable = {'September': '16°C', 'December': '-10°C'} 
+another_dictionary = {'June': '21°C'}
+
+# adding items from another dictionary
+testable.update(another_dictionary)
+print(testable)  # {'September': '16°C', 'December': '-10°C', 'June': '21°C'}
+
+# adding a key-value pair
+testable.update(October='10°C')
+print(testable)  
+# {'September': '16°C', 'December': '-10°C', 'June': '21°C', 'October': '10°C'}</code></pre>
+<p>If the specified key already exists in the dictionary, the method will update the key with the new value:</p>
+<pre><code class="language-python">testable = {'September': '16°C', 'December': '-10°C'}
+testable.update(December='-20°C')
+
+print(testable)  # {'September': '16°C', 'December': '-20°C'}</code></pre>
+<h5 id="summary" style="text-align: center;">Summary</h5>
+<p>What have we learned in this topic?</p>
+<ul>
+<li>a new <code class="language-python">fromkeys</code> method for alternative dictionary creation; we also found out its peculiarities,</li>
+<li>discovered how to add new items to the dictionary with the <code class="language-python">update</code> method,</li>
+</ul>
+<p>If you want to see more information on dictionaries, don't forget to check out <a href="https://docs.python.org/3/library/stdtypes.html#dict" rel="noopener noreferrer nofollow" target="_blank">the Python documentation</a>.</p>
+</div>
